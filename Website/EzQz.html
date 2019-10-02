@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>EzQz</title>
+        <script src="C:\Users\Jamie\Documents\Personal\AWS\Node\node_modules\chart.js\dist\Chart.js"></script>
+        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
+        <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">   
+        <script src="currentQ.js"></script>
+        <script src="daysChart.js"></script>
+        <script src="hoursChart.js"></script>
+        <script src="getAllData.js"></script>
+        <script src="makeStats.js"></script>
+        <script src="colourGen.js"></script>
+        <script src="jquery.js"></script>
+        <script src="identity.js"></script>
+        <link rel="stylesheet" type="text/css" href="mainStyle.css">
+    </head>
+    <body onload="getData()">
+    <body>
+        <div id="header">
+            <span id="title">EzQz</span>
+            <span id="header_q"class="currentQueue"></span>
+            <span id="about">&#9432</span>
+        </div>
+        <div id="dialog" class="w3-modal">
+            <div class="w3-modal-content">
+              <div class="w3-container">
+                <span id="modal-close" class="w3-button w3-display-topright">&times;</span>
+                <p>The estimated queue time is based on the number of people waiting and the average queue times.</p>
+                <p>For more information please visit our <a href="https://github.com/Jamie-Burns-Oulu/EzQz">Github</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="main_body">
+            <div id="queueMain">
+            <span class="currentQueue"></span>
+        </div> 
+        <div class="chart-container">
+        <div class="chart-item">
+            <canvas id="hoursChart"></canvas>
+        </div> 
+          <div class="chart-item">
+            <canvas id="daysChart"></canvas>
+        </div>       
+    </div>
+        </div>
+    </body>
+</html>
