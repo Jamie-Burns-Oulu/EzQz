@@ -5,13 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>EzQz</title>
-        <script src="..\dist\Chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
         <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
         <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">   
         <script src="currentQ.js"></script>
         <script src="daysChart.js"></script>
         <script src="hoursChart.js"></script>
+        <script src="queueStats.js"></script>
         <script src="getAllData.js"></script>
         <script src="makeStats.js"></script>
         <script src="colourGen.js"></script>
@@ -19,7 +20,7 @@
         <script src="identity.js"></script>
         <link rel="stylesheet" type="text/css" href="mainStyle.css">
     </head>
-    <body onload="getData()">
+    <body onload="getData();getDataForQ();">
     <body>
         <div id="header">
             <span id="title">EzQz</span>

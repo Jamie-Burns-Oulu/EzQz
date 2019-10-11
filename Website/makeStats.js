@@ -57,34 +57,42 @@ function makeAllStats(allData) {
     }
     //
     //
-    function fix(x) {
-        return x < 10 ? "0" + x : x;
-    }
+    // function fix(x) {
+    //     return x < 10 ? "0" + x : x;
+    // }
     //
     //
-    function currentQueueStats() {
-        queueTime = "3";
-        var today = new Date();     
-        var date = String(fix(today.getDate())) + String(fix(today.getMonth() + 1));
-        var time = String(fix(today.getHours())) + String(fix(today.getMinutes()));
-        allData.forEach(el => {
-            if (
-                time == el.Time.substring(0, 4) &&
-                date == el.Time.substring(6, 10)
-            ) {
-                // currentPeople += Number(el.People);
-            }
-        });
-        return queueTime;
-    }
+    // function currentQueueStats(allData) {
+    //     queueTime = "3";
+    //     var today = new Date();     
+    //     var date = String(fix(today.getDate())) + String(fix(today.getMonth() + 1));
+    //     var time = String(fix(today.getHours())) + String(fix(today.getMinutes()));
+    //     queueTime = time;
+    //     allData.forEach(el => {
+    //         if (
+    //             // time == el.Time.substring(0, 4)
+    //             el.Time.substring(0, 4) == 1112 &&
+    //             date == el.Time.substring(6, 10)
+    //         ) {
+    //         //   console.log(el)
+    //         //   console.log(time, date)
+            
+    //             // currentPeople += Number(el.People);
+    //         }
+    //         else{
+
+    //         }
+    //     });
+    //     return queueTime;
+    // }
     //
     //
     dayStats();
     hourlyStats();
-    currentQueueStats();
+    // currentQueueStats();
 
     
-    updateQ(queueTime)
+    // updateQ(queueTime)
     makeDaysChart(daysData);
     makeHoursChart(hoursData);
 

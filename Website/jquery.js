@@ -85,4 +85,11 @@ $(document).ready(function() {
             $(this).hide();
         }
     });
+
+    setInterval(function() {
+        getDataForQ();
+        $("#queuemain").load("file:///C:/Users/Jamie/Documents/Uni/1.IoT/Project/EzQz/Website/EzQz.html" + " #queuemain","");
+        console.log("here");
+    }, 30000);
+
 });
