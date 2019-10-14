@@ -80,7 +80,6 @@ $(document).ready(function() {
         $("#dialog").show();
     });
     $("#dialog").click(function(e) {
-        console.log(e.target);
         if (e.target.id == "dialog") {
             $(this).hide();
         }
@@ -88,8 +87,6 @@ $(document).ready(function() {
 
     setInterval(function() {
         getDataForQ();
-        $("#queuemain").load("file:///C:/Users/Jamie/Documents/Uni/1.IoT/Project/EzQz/Website/EzQz.html" + " #queuemain","");
-        console.log("here");
+        $("#queuemain").load();
     }, 30000);
-
 });

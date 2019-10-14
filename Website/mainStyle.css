@@ -41,13 +41,13 @@
     margin-top: 80px;
 }
 
-.chart-item{
+.chart-item {
     width: 80%;
     margin-left: 120px;
-    margin-bottom: 50px
+    margin-bottom: 60px;
 }
 
-.w3-modal-content{
+.w3-modal-content {
     top: 120px;
     color: #52b9bd;
     border: 1px solid #4d8188;
@@ -55,4 +55,3 @@
     font-weight: bold;
     font-size: 2em;
 }
-
