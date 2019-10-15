@@ -10,6 +10,8 @@
         <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">   
         <script src="currentQ.js"></script>
+        <script src="liveChart.js"></script>
+        <script src="liveLineChartStats.js"></script>
         <script src="daysChart.js"></script>
         <script src="hoursChart.js"></script>
         <script src="queueStats.js"></script>
@@ -38,17 +40,20 @@
           </div>
         </div>
         <div id="main_body">
-            <div id="queueMain">
+          <div id="queueMain">
             <span class="currentQueue"></span>
-        </div> 
-        <div class="chart-container">
-        <div class="chart-item">
-            <canvas id="hoursChart"></canvas>
-        </div> 
-          <div class="chart-item">
-            <canvas id="daysChart"></canvas>
-        </div>       
-    </div>
+          </div> 
+          <div class="chart-container">
+            <div class="chart-item" id="liveChartContainer">
+              <canvas id="liveChart"></canvas>
+            </div>  
+            <div class="chart-item">
+                <canvas id="hoursChart"></canvas>
+            </div> 
+            <div class="chart-item">
+              <canvas id="daysChart"></canvas>
+            </div>            
+          </div>
         </div>
     </body>
 </html>

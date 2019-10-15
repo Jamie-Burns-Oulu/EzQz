@@ -48,6 +48,7 @@ function getDataForQ() {
                 docClient.scan(params, onScan);
             }         
             queueStats(allData);
+            liveStats(allData);
         }
     }
 }
