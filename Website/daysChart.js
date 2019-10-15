@@ -33,7 +33,9 @@ function makeDaysChart(daysData) {
                 }
             ]
         },
-        options: {            
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
             title: {
                 display: true,
                 text: "Daily",

@@ -111,6 +111,8 @@ function makeHoursChart(hoursData) {
             ]
         },
         options: {
+            responsive: true,
+            maintainAspectRatio: false,
             title: {
                 display: true,
                 text: "Hourly",

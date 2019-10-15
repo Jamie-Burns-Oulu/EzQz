@@ -42,7 +42,8 @@
 }
 
 .chart-item {
-    width: 80%;
+    width: 85%;
+    height: 500px;
     margin-left: 120px;
     margin-bottom: 60px;
 }

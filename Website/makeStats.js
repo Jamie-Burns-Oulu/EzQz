@@ -41,29 +41,48 @@ function makeAllStats(allData) {
             });
         });
         hoursData = [];
-        console.log(daysData);
+        hoursAllMax = [];
         for (i = 0; i <= 4; i++) {
+            hoursMaxData = [[], [], [], [], [], [], [], [], []];
             let ele = (elet = twe = twet = one = onet = two = twot = tenH = tenHt = eleH = eleHt = tweH = tweHt = oneH = oneHt = twoH = twoHt = 0);
             daysData[i].forEach(el => {
                 let time = Number(el.Time.substring(0, 4));
                 if (time >= 1030 && time <= 1100) {
-                    tenH++, (tenHt += Number(el.People));
+                    tenH++,
+                        (tenHt += Number(el.People)),
+                        hoursMaxData[0].push(Number(el.People));
                 } else if (time >= 1101 && time <= 1130) {
-                    ele++, (elet += Number(el.People));
+                    ele++,
+                        (elet += Number(el.People)),
+                        hoursMaxData[1].push(Number(el.People));
                 } else if (time >= 1131 && time <= 1200) {
-                    eleH++, (eleHt += Number(el.People));
+                    eleH++,
+                        (eleHt += Number(el.People)),
+                        hoursMaxData[2].push(Number(el.People));
                 } else if (time >= 1201 && time <= 1230) {
-                    twe++, (twet += Number(el.People));
+                    twe++,
+                        (twet += Number(el.People)),
+                        hoursMaxData[3].push(Number(el.People));
                 } else if (time >= 1231 && time <= 1300) {
-                    tweH++, (tweHt += Number(el.People));
+                    tweH++,
+                        (tweHt += Number(el.People)),
+                        hoursMaxData[4].push(Number(el.People));
                 } else if (time >= 1301 && time <= 1330) {
-                    one++, (onet += Number(el.People));
+                    one++,
+                        (onet += Number(el.People)),
+                        hoursMaxData[5].push(Number(el.People));
                 } else if (time >= 1331 && time <= 1400) {
-                    oneH++, (oneHt += Number(el.People));
+                    oneH++,
+                        (oneHt += Number(el.People)),
+                        hoursMaxData[6].push(Number(el.People));
                 } else if (time >= 1401 && time <= 1430) {
-                    two++, (twot += Number(el.People));
+                    two++,
+                        (twot += Number(el.People)),
+                        hoursMaxData[7].push(Number(el.People));
                 } else if (time >= 1431 && time <= 1500) {
-                    twoH++, (twoHt += Number(el.People));
+                    twoH++,
+                        (twoHt += Number(el.People)),
+                        hoursMaxData[8].push(Number(el.People));
                 }
             });
             hoursData.push(
@@ -77,14 +96,21 @@ function makeAllStats(allData) {
                 Math.round(twot / two),
                 Math.round(twoHt / twoH)
             );
+        //    for (j = 0; j == hoursMaxData.length; j++) {
+        //         if (hoursMaxData[j].length == 0) {
+        //             hoursAllMax.push(0);
+        //         } else {
+        //             hoursAllMax.push(Math.max.apply(Math, hoursMaxData[j]));
+        //         }
+        //     } 
         }
-
+        // console.log(hoursAllMax);
         let queueMin = 2;
-        let queueMid = 6;
-        let queueMax = 10;
+        let queueMid = 5;
+        let queueMax = 8;
         hoursQueueData = [];
         hoursData.forEach(el => {
-            if (el > 0) {
+            if (el > 1) {
                 if (el <= queueMin) {
                     hoursQueueData.push(3);
                 } else if (el > queueMin && el <= queueMid) {
