@@ -88,5 +88,6 @@ $(document).ready(function() {
     setInterval(function() {
         getDataForQ();
         $("#queuemain").load();
+        $("#liveChartContainer").load();
     }, 30000);
 });
