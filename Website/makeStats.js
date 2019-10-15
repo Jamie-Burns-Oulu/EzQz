@@ -96,13 +96,13 @@ function makeAllStats(allData) {
                 Math.round(twot / two),
                 Math.round(twoHt / twoH)
             );
-        //    for (j = 0; j == hoursMaxData.length; j++) {
-        //         if (hoursMaxData[j].length == 0) {
-        //             hoursAllMax.push(0);
-        //         } else {
-        //             hoursAllMax.push(Math.max.apply(Math, hoursMaxData[j]));
-        //         }
-        //     } 
+            //    for (j = 0; j == hoursMaxData.length; j++) {
+            //         if (hoursMaxData[j].length == 0) {
+            //             hoursAllMax.push(0);
+            //         } else {
+            //             hoursAllMax.push(Math.max.apply(Math, hoursMaxData[j]));
+            //         }
+            //     }
         }
         // console.log(hoursAllMax);
         let queueMin = 2;
@@ -110,8 +110,10 @@ function makeAllStats(allData) {
         let queueMax = 8;
         hoursQueueData = [];
         hoursData.forEach(el => {
-            if (el > 1) {
-                if (el <= queueMin) {
+            if (el > 0) {
+                if (el == 1) {
+                    hoursQueueData.push(1);
+                } else if (el > 1 && el <= queueMin) {
                     hoursQueueData.push(3);
                 } else if (el > queueMin && el <= queueMid) {
                     hoursQueueData.push(5);

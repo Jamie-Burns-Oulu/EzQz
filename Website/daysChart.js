@@ -50,7 +50,7 @@ function makeDaysChart(daysData) {
                         scaleLabel: {
                             display: true,
                             labelString: "Average Busyness (people)",
-                            fontSize: 18
+                            fontSize: 16
                         },
                         ticks: {
                             beginAtZero: true
@@ -62,7 +62,7 @@ function makeDaysChart(daysData) {
                         scaleLabel: {
                             display: true,
                             labelString: "Time (day)",
-                            fontSize: 18
+                            fontSize: 16
                         }
                     }
                 ]

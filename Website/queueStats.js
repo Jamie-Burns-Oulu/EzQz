@@ -8,18 +8,21 @@ function queueStats(allData) {
     var time = String(fix(today.getHours())) + String(fix(today.getMinutes()));
     let currentPeople = 0;
     let queueMin = 2;
-    let queueMid = 6;
-    let queueMax = 10;
+    let queueMid = 5;
+    let queueMax = 8;
     let counter = 0;
+    let onlineBool = true;
     allData.forEach(el => {
         if (
             (time == el.Time.substring(0, 4) ||
-                time - 1 == el.Time.substring(0, 4) ||
-                time - 2 == el.Time.substring(0, 4)) &&
+                time - 1 == el.Time.substring(0, 4)) &&
             date == el.Time.substring(6, 10)
         ) {
-            counter ++;
+            counter++;
             currentPeople += Number(el.People);
+            onlineBool = true;
+        } else {
+            onlineBool = false;
         }
     });
     currentPeople = currentPeople / counter;
@@ -27,7 +30,12 @@ function queueStats(allData) {
     let colour = "#029DB2";
     let bk = "rgba(4, 95, 96, 1)";
     if (currentPeople > 0) {
-        if (currentPeople <= queueMin) {
+        if (currentPeople == 1) {
+            queueTime = 1;
+            colour = "#94F000";
+            bk = "#108B31";
+        }
+        if (currentPeople > 1 && currentPeople <= queueMin) {
             queueTime = 3;
             colour = "#94F000";
             bk = "#108B31";
@@ -45,5 +53,5 @@ function queueStats(allData) {
             bk = "#C40E00";
         }
     }
-    updateQ(queueTime, colour, bk);
+    updateQ(queueTime, colour, bk, onlineBool);
 }

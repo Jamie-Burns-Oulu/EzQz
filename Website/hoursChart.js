@@ -125,7 +125,7 @@ function makeHoursChart(hoursData) {
                         scaleLabel: {
                             display: true,
                             labelString: "Average Queue Time (mins)",
-                            fontSize: 18
+                            fontSize: 16
                         },
                         ticks: {
                             beginAtZero: true
@@ -137,7 +137,7 @@ function makeHoursChart(hoursData) {
                         scaleLabel: {
                             display: true,
                             labelString: "Time (hours)",
-                            fontSize: 18
+                            fontSize: 16
                         }
                     }
                 ]

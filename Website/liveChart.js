@@ -1,7 +1,6 @@
 let liveCtx = [];
 
 function makeLiveChart(liveData) {
-    var timeNow = 
     liveCtx = document.getElementById("liveChart").getContext("2d");
     var [time, people]  = formatData(liveData);
     var sliceAmount = 35;
@@ -19,6 +18,7 @@ function makeLiveChart(liveData) {
                 fill: false,
                 borderColor: 'rgba(50, 120, 20, 0.5)',
                 backgroundColor:'rgba(50, 120, 20, 0.5)',
+                pointRadius: 0,
             },
         ], 
         },
@@ -35,7 +35,7 @@ function makeLiveChart(liveData) {
                     type: 'category',
                     scaleLabel: {
                         display: true,
-                        fontSize: 18,
+                        fontSize: 16,
                         labelString: 'Time of day',
                     },
                     labels: slicedTime,
@@ -54,7 +54,7 @@ function makeLiveChart(liveData) {
                     },
                     scaleLabel: {
                         display: true,
-                        fontSize: 18,
+                        fontSize: 16,
                         labelString: 'Number of people',
                     },
                 }]
