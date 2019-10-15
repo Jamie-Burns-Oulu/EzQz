@@ -8,7 +8,6 @@ function makeDaysChart(daysData) {
             labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
             datasets: [
                 {
-                    label: "Average Busyness (People)",
                     data: [
                         daysData[0],
                         daysData[1],
@@ -40,11 +39,28 @@ function makeDaysChart(daysData) {
                 text: "Daily",
                 fontSize: 24
             },
+            legend: {
+                display: false
+            },
             scales: {
                 yAxes: [
                     {
+                        scaleLabel: {
+                            display: true,
+                            labelString: "Average Busyness (people)",
+                            fontSize: 18
+                        },
                         ticks: {
                             beginAtZero: true
+                        }
+                    }
+                ],
+                xAxes: [
+                    {
+                        scaleLabel: {
+                            display: true,
+                            labelString: "Time (day)",
+                            fontSize: 18
                         }
                     }
                 ]
