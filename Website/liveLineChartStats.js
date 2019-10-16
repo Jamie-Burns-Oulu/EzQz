@@ -6,7 +6,7 @@ function liveStats(allData) {
     var today = new Date();
     var date = String(fix(today.getDate())) + String(fix(today.getMonth() + 1));
     var time = String(fix(today.getHours())) + String(fix(today.getMinutes()));
-    let onlineBool = true;
+    let onlineBool = false;
     allData.forEach(el => {
         if (
             (time == el.Time.substring(0, 4) ||
@@ -14,9 +14,7 @@ function liveStats(allData) {
             date == el.Time.substring(6, 10)
         ) {
             onlineBool = true;
-        } else {
-            onlineBool = false;
-        }
+        } 
     });
 
     var liveData = [];

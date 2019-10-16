@@ -51,6 +51,7 @@ function makeLiveChart(liveData) {
                     ticks: {
                         stepSize: 1,
                         max: Math.max(...slicedPeople) + 1,
+                        min: 0,
                     },
                     scaleLabel: {
                         display: true,

@@ -11,7 +11,7 @@ function queueStats(allData) {
     let queueMid = 5;
     let queueMax = 8;
     let counter = 0;
-    let onlineBool = true;
+    let onlineBool = false;
     allData.forEach(el => {
         if (
             (time == el.Time.substring(0, 4) ||
@@ -21,9 +21,7 @@ function queueStats(allData) {
             counter++;
             currentPeople += Number(el.People);
             onlineBool = true;
-        } else {
-            onlineBool = false;
-        }
+        } 
     });
     currentPeople = currentPeople / counter;
     let queueTime = 0;
