@@ -3,6 +3,7 @@ let hoursCtx = [];
 function makeHoursChart(hoursData) {
     let today = new Date();
     hoursCtx = document.getElementById("hoursChart").getContext("2d");
+
     var myChart = new Chart(hoursCtx, {
         type: "bar",
         data: {
@@ -115,7 +116,7 @@ function makeHoursChart(hoursData) {
             maintainAspectRatio: false,
             title: {
                 display: true,
-                text: "Hourly",
+                text: "Historic Hourly Average",
                 fontSize: 24
             },
 
@@ -124,11 +125,13 @@ function makeHoursChart(hoursData) {
                     {
                         scaleLabel: {
                             display: true,
-                            labelString: "Average Queue Time (mins)",
+                            labelString: "Average queue time (mins)",
                             fontSize: 16
                         },
                         ticks: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            stepSize: 1,
+                            max: Math.max(...hoursData) + 1
                         }
                     }
                 ],

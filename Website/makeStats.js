@@ -96,37 +96,58 @@ function makeAllStats(allData) {
                 Math.round(twot / two),
                 Math.round(twoHt / twoH)
             );
-            //    for (j = 0; j == hoursMaxData.length; j++) {
-            //         if (hoursMaxData[j].length == 0) {
-            //             hoursAllMax.push(0);
-            //         } else {
-            //             hoursAllMax.push(Math.max.apply(Math, hoursMaxData[j]));
-            //         }
-            //     }
+            hoursAllMax.push(hoursMaxData);
         }
-        // console.log(hoursAllMax);
+
+        hourlyMaximums = [];
+        for (j = 0; j < hoursAllMax.length; j++) {
+            for (k = 0; k < hoursAllMax[j].length; k++) {
+                if (hoursAllMax[j][k].length) {
+                    hourlyMaximums.push(
+                        Math.max.apply(Math, hoursAllMax[j][k])
+                    );
+                } else {
+                    hourlyMaximums.push(0);
+                }
+            }
+        }
+
+        let accumulatedMax = [[], [], [], [], [], [], [], [], []];
+        for (i = 0; i < hourlyMaximums.length; i += 9) {
+            for (j = 0; j < 9; j++) {
+                accumulatedMax[j].push(hourlyMaximums[i + j]);
+            }
+        }
+        accumulatedMax.forEach(obtainMax);
+        function obtainMax(el, index, array) {
+            array[index] = Math.max(...el);
+        }
+        hourlyMaximums = hourlyMaximums.concat(accumulatedMax);
+        return (
+            hoursData.forEach(queueConversion),
+            hourlyMaximums.forEach(queueConversion)
+        );
+    }
+
+    function queueConversion(el, index, array) {
         let queueMin = 2;
         let queueMid = 5;
         let queueMax = 8;
-        hoursQueueData = [];
-        hoursData.forEach(el => {
-            if (el > 0) {
-                if (el == 1) {
-                    hoursQueueData.push(1);
-                } else if (el > 1 && el <= queueMin) {
-                    hoursQueueData.push(3);
-                } else if (el > queueMin && el <= queueMid) {
-                    hoursQueueData.push(5);
-                } else if (el > queueMid && el <= queueMax) {
-                    hoursQueueData.push(7);
-                } else if (el > queueMax) {
-                    hoursQueueData.push(10);
-                }
-            } else {
-                hoursQueueData.push(0);
+        if (el > 0) {
+            if (el == 1) {
+                array[index] = 1;
+            } else if (el > 1 && el <= queueMin) {
+                array[index] = 3;
+            } else if (el > queueMin && el <= queueMid) {
+                array[index] = 5;
+            } else if (el > queueMid && el <= queueMax) {
+                array[index] = 7;
+            } else if (el > queueMax) {
+                array[index] = 10;
             }
-        });
-        return hoursQueueData;
+        } else {
+            array[index] = 0;
+        }
     }
     //
     //
@@ -135,5 +156,6 @@ function makeAllStats(allData) {
     //
     //
     makeDaysChart(dailyData);
-    makeHoursChart(hoursQueueData);
+    makeHoursChart(hoursData);
+    makeHoursMaxChart(hourlyMaximums);
 }

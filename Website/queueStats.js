@@ -21,7 +21,7 @@ function queueStats(allData) {
             counter++;
             currentPeople += Number(el.People);
             onlineBool = true;
-        } 
+        }
     });
     currentPeople = currentPeople / counter;
     let queueTime = 0;

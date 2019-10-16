@@ -16,18 +16,18 @@ function makeDaysChart(daysData) {
                         daysData[4]
                     ],
                     backgroundColor: [
-                        "#f18984",
-                        "#ba7bf0",
-                        "#b2f07d",
-                        "#88edf1",
-                        "#f0ba7b"
+                        "#FD626A",
+                        "#FFBF63",
+                        "#D5F960",
+                        "#52D499",
+                        "#5E84DB"
                     ],
                     borderColor: [
-                        "#e5231a",
-                        "#881AE5",
-                        "#77E51A",
-                        "#1ADCE5",
-                        "#E5881C"
+                        "#FC353F",
+                        "#FFAD36",
+                        "#C9F734",
+                        "#2BCA82",
+                        "#3868D5"
                     ],
                     borderWidth: 4
                 }
@@ -38,7 +38,7 @@ function makeDaysChart(daysData) {
             maintainAspectRatio: false,
             title: {
                 display: true,
-                text: "Daily",
+                text: "Historic Daily",
                 fontSize: 24
             },
             legend: {
@@ -49,11 +49,13 @@ function makeDaysChart(daysData) {
                     {
                         scaleLabel: {
                             display: true,
-                            labelString: "Average Busyness (people)",
+                            labelString: "Average busyness (people)",
                             fontSize: 16
                         },
                         ticks: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            stepSize: 1,
+                            max: Math.max(...daysData) + 1
                         }
                     }
                 ],
