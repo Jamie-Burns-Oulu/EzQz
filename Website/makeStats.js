@@ -155,19 +155,16 @@ function makeAllStats(allData) {
         for (let i = 0; i < allData.length; i++) {
             let currentPeople = String(allData[i].People);
             let objKeys = Object.keys(histogramValues);
-            let ifSpaceInString = currentPeople.indexOf(" ") > -1 ? true : false; 
-            if(objKeys.includes(currentPeople) || ifSpaceInString) {
-                let propertyName = currentPeople.replace(/\s/g, '');
+            let ifSpaceInString =
+                currentPeople.indexOf(" ") > -1 ? true : false;
+            if (objKeys.includes(currentPeople) || ifSpaceInString) {
+                let propertyName = currentPeople.replace(/\s/g, "");
                 histogramValues[propertyName]++;
-            }
-            else {
+            } else {
                 histogramValues[currentPeople] = 1;
             }
         }
-        console.log(histogramValues);
         return histogramValues;
-        
-
     }
     //
     //
@@ -180,5 +177,4 @@ function makeAllStats(allData) {
     makeHoursChart(hoursData);
     makeHoursMaxChart(hourlyMaximums);
     makeHistogramChart(histogramValues);
-
 }

@@ -61,7 +61,6 @@ function makeHistogramChart(histogramData) {
 
 function formatHistogramData(d) {
     var data = [];
-    console.log(d);
     for (const key in d) {
         data.push(d[key]);
     }
