@@ -4,7 +4,7 @@ function makeHistogramChart(histogramData) {
     var data = formatHistogramData(histogramData);
     var labels = Object.keys(histogramData)
     histogramCtx = document.getElementById("histogramChart").getContext("2d");
-    var gradientStroke = liveCtx.createLinearGradient(0, 660, 0, 0);
+    var gradientStroke = histogramCtx.createLinearGradient(0, 660, 0, 0);
     gradientStroke.addColorStop(1, "#FD626A");
     gradientStroke.addColorStop(0.75, "#FFBF63");
     gradientStroke.addColorStop(0.5, "#D5F960");
