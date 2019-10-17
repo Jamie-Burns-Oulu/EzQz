@@ -26,10 +26,10 @@ function liveStats(allData) {
             liveData.push(el);
         }
     });
-    // if (onlineBool) {
+    if (onlineBool) {
         $("#liveChartContainer").show();
         makeLiveChart(liveData);
-    // } else {
-    //     $("#liveChartContainer").hide();
-    // }
+    } else {
+        $("#liveChartContainer").hide();
+    }
 }

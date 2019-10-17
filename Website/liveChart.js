@@ -9,11 +9,11 @@ function makeLiveChart(liveData) {
     var slicedTime = time.slice(-sliceAmount);
     var slicedPeople = people.slice(-sliceAmount);
     var gradientStroke = liveCtx.createLinearGradient(0, 0, 1000, 0);
-    gradientStroke.addColorStop(1, "#FD626A");
-    gradientStroke.addColorStop(0.75, "#FFBF63");
+    gradientStroke.addColorStop(0, "#FD626A");
+    gradientStroke.addColorStop(0.25, "#FFBF63");
     gradientStroke.addColorStop(0.5, "#D5F960");
-    gradientStroke.addColorStop(0.25, "#52D499");
-    gradientStroke.addColorStop(0, "#5E84DB");
+    gradientStroke.addColorStop(0.75, "#52D499");
+    gradientStroke.addColorStop(1, "#5E84DB");
 
     var myChart = new Chart(liveCtx, {
         type: "line",
