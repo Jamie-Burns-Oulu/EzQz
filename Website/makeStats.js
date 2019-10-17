@@ -149,13 +149,36 @@ function makeAllStats(allData) {
             array[index] = 0;
         }
     }
+
+    function histogramStats() {
+        histogramValues = {};
+        for (let i = 0; i < allData.length; i++) {
+            let currentPeople = String(allData[i].People);
+            let objKeys = Object.keys(histogramValues);
+            let ifSpaceInString = currentPeople.indexOf(" ") > -1 ? true : false; 
+            if(objKeys.includes(currentPeople) || ifSpaceInString) {
+                let propertyName = currentPeople.replace(/\s/g, '');
+                histogramValues[propertyName]++;
+            }
+            else {
+                histogramValues[currentPeople] = 1;
+            }
+        }
+        console.log(histogramValues);
+        return histogramValues;
+        
+
+    }
     //
     //
     dayStats();
     hourlyStats();
+    histogramStats();
     //
     //
     makeDaysChart(dailyData);
     makeHoursChart(hoursData);
     makeHoursMaxChart(hourlyMaximums);
+    makeHistogramChart(histogramValues);
+
 }
